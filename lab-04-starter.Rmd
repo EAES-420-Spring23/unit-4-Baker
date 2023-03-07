@@ -16,9 +16,30 @@ library(openintro)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r echo = F}
+1
+1L
+"C"
+```
+
+1 is a type double.
+1L is a type integer.
+C is a type character. 
+
+```{r echo = F}
+c(1, 1L, "C")
+```
+
+The second code chunk gives the output as a vector. 
+
+```{r echo = F}
+typeof(c(1, 1L, "C"))
+```
+
+All of the components in the vector have to be the same; since "C" is a character and it cannot be a numerical, the others have to default to a type character as well. 
 
 ### Exercise 2
+
 
 Remove this text, and add your answer for Exercise 2 here.
 
