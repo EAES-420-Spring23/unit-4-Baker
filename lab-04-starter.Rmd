@@ -140,8 +140,22 @@ Year and deaths can be explicitly coerced into different data types such as inte
 
 ### Exercise 9
 
+```{r echo = F}
+as.character(1902)
+```
 
+If the Hw-01 graph were recreated with year as a character data type, r would not know to place them in numerical order because they are no longer numerical data types. 
 
 ### Exercise 10
 
-Remove this text, and add your answer for Exercise 9 here.
+```{r major-earthquakes, eval = T}
+earthquakes %>% 
+  mutate(major = case_when(
+    richter > 7.5 ~ TRUE,
+    TRUE ~ FALSE  
+  )) %>% 
+  mutate(major = as.numeric(major)) %>% 
+  filter(major == 1)
+```
+
+There were 29 major earthquakes in this dataset. 
