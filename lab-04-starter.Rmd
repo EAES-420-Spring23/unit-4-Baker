@@ -69,7 +69,18 @@ The vector is considered a double data type because FALSE and T (TRUE) are logic
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
+```{r echo = F}
+TRUE
+as.numeric(TRUE)
+```
+
+TRUE is `r typeof(TRUE)` and 1 is `r typeof(1)`.
+
+```{r echo = F}
+typeof(c(TRUE, as.numeric(TRUE)))
+```
+
+The output shows this vector is a double data type because as.numeric changes TRUE into a double and the vector defaults to a double data type.   
 
 ### Exercise 5
 
