@@ -96,12 +96,24 @@ Na is `r typeof(NA)`, FALSE is `r typeof(FALSE)`, and TRUE is `r typeof(TRUE)`.
 typeof(c(NA, FALSE, as.logical(1)))
 ```
 
-This vector is a logical data type because as.logical() converts "1" into a logical data type and now all three components are logical data types. 
-
+This vector is a logical data type because as.logical() converts "1" into a logical data type and now all three components are logical data types. Without as.logical(), "1" would be considered a double data type, and the whole vector would be a double.  
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
+```{r echo = F}
+1L
+0
+1L / 0
+"A"
+```
+
+1L is `r typeof(1L)`, 0 is `r typeof(0)`, in 1L / 0, 1L is `r typeof(1L)`, 0 is `r typeof(0)`, and together is a `r typeof(1L / 0)`, and A is a `r typeof("A")`. 
+
+```{r echo = F}
+typeof(c(1L / 0, "A"))
+```
+
+This vector is a character data type because even though 1L / 0 is a double, the vector was default to a character data type because of "A."
 
 ### Exercise 7
 
