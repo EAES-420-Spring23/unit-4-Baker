@@ -59,7 +59,7 @@ FALSE
 T
 ```
 
-3 is a `r typeof(3)`, FALSE is a `r typeof(FALSE)`, and TRUE is a `r typeof(TRUE)`.
+3 is a `r typeof(3)`, FALSE is `r typeof(FALSE)`, and TRUE is `r typeof(TRUE)`.
 
 ```{r echo = F}
 typeof(c(3, FALSE, T))
@@ -74,17 +74,30 @@ TRUE
 as.numeric(TRUE)
 ```
 
-TRUE is `r typeof(TRUE)` and 1 is `r typeof(1)`.
+TRUE is `r typeof(TRUE)` and 1 is a `r typeof(1)`.
 
 ```{r echo = F}
 typeof(c(TRUE, as.numeric(TRUE)))
 ```
 
-The output shows this vector is a double data type because as.numeric changes TRUE into a double and the vector defaults to a double data type.   
+The output shows this vector is a double data type because as.numeric() changes TRUE into a double and the vector defaults to a double data type.   
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
+```{r echo = F}
+NA
+FALSE
+as.logical(1)
+```
+
+Na is `r typeof(NA)`, FALSE is `r typeof(FALSE)`, and TRUE is `r typeof(TRUE)`.
+
+```{r echo = F}
+typeof(c(NA, FALSE, as.logical(1)))
+```
+
+This vector is a logical data type because as.logical() converts "1" into a logical data type and now all three components are logical data types. 
+
 
 ### Exercise 6
 
