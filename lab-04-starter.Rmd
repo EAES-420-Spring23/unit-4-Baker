@@ -117,11 +117,13 @@ This vector is a character data type because even though 1L / 0 is a double, the
 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
+```{r earthquakes}
+glimpse(earthquakes)
+```
 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
+
 
 ### Exercise 9
 
