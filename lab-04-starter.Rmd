@@ -123,11 +123,24 @@ glimpse(earthquakes)
 
 ### Exercise 8
 
+```{r echo = F}
+as.integer(7.5)
+```
 
+```{r echo = F}
+as.integer(1902)
+```
+
+```{r echo = F}
+as.integer(2000)
+```
+
+
+Year and deaths can be explicitly coerced into different data types such as integer data types and retain the same information; however, with richter, the 7.5 changed to 7, thereby losing information.   
 
 ### Exercise 9
 
-Remove this text, and add your answer for Exercise 9 here.
+
 
 ### Exercise 10
 
