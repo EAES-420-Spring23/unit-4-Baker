@@ -40,7 +40,18 @@ This data frame is a `r typeof(data_frame)` and is a `r class(data_frame)`.
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+```{r data-frame-2, eval = F}
+numeric <- c(5,10,15,20,25)
+
+character <- c("Mammals", "Reptiles", "Amphibians", "Fish")
+
+mixed <- c(5, "Mammals", 10, "Reptiles", 15)
+
+data_frame_2 <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
+data_frame_2
+```
+
+This code chunk will not run because vector "character" has only 4 components while the other two have 5 and all vectors need to have the same amount of components.
 
 ### Exercise 4
 
