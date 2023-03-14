@@ -18,7 +18,7 @@ library(lubridate)
 ### Exercise 1
 
 ```{r my-vectors}
-numeric <- c(2, 4, 6, 8, 10, 12)
+numeric <- c(2, 4, 6, 8, 10)
 
 character <- c("Seconds", "Minutes", "Hours", "Days", "Weeks")
 
@@ -31,7 +31,12 @@ mixed <- c(2, "Minutes", 6, "Hours", 10)
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 2 here.
+```{r data-frame , eval = T}
+data_frame <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
+data_frame
+```
+
+This data frame is a `r typeof(data_frame)` and is a `r class(data_frame)`. 
 
 ### Exercise 3
 
