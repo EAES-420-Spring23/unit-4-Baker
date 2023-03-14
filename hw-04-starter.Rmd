@@ -17,7 +17,17 @@ library(lubridate)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r my-vectors}
+numeric <- c(2, 4, 6, 8, 10, 12)
+
+character <- c("Seconds", "Minutes", "Hours", "Days", "Weeks")
+
+mixed <- c(2, "Minutes", 6, "Hours", 10)
+```
+
+"numeric" is a `r typeof(numeric)` data type, "character" is a `r typeof(character)` data type, and "mixed" is a `r typeof(mixed)` data type.
+
+"numeric" is a `r class(numeric)`vector, "character" is a `r class(character)` vector, and "mixed" is a `r class(mixed)` vector.
 
 ### Exercise 2
 
