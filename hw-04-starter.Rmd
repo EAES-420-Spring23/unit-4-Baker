@@ -27,7 +27,7 @@ mixed <- c(2, "Minutes", 6, "Hours", 10)
 
 "numeric" is a `r typeof(numeric)` data type, "character" is a `r typeof(character)` data type, and "mixed" is a `r typeof(mixed)` data type.
 
-"numeric" is a `r class(numeric)`vector, "character" is a `r class(character)` vector, and "mixed" is a `r class(mixed)` vector.
+"numeric" is a `r class(numeric)` vector, "character" is a `r class(character)` vector, and "mixed" is a `r class(mixed)` vector.
 
 ### Exercise 2
 
@@ -64,11 +64,68 @@ The list() function basically creates vectors into a list of the components and 
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
+```{r earthquakes-factors}
+earthquakes %>% 
+  ggplot(aes(x = month)) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+typeof(month)
+```
+
+1) month is characterized as a closure (function) data type instead of a character data type.
+2) The months are out of order because r is placing the months in random order.
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
+```{r earthquakes-forcats-1}
+earthquakes %>% 
+  ggplot(aes(x = fct_infreq(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+
+```{r earthquakes-forcats-2}
+earthquakes %>% 
+  ggplot(aes(x = fct_rev(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+
+```{r earthquakes-forcats-3}
+earthquakes %>% 
+  ggplot(aes(x = fct_inorder(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+
+```{r earthquakes-forcats-4}
+earthquakes %>% 
+  ggplot(aes(x = month %>% fct_infreq() %>% fct_rev())) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+
+```{r earthquakes-forcats-5}
+earthquakes %>% 
+  mutate(month = fct_recode(month,
+                            "1" = "January",
+                            "2" = "February",
+                            "3" = "March",
+                            "4" = "April",
+                            "5" = "May",
+                            "6" = "June",
+                            "7" = "July",
+                            "8" = "August",
+                            "9" = "September",
+                            "10" = "October",
+                            "11" = "November",
+                            "12" = "December")) %>% 
+  ggplot(aes(x = factor(as.numeric(month)))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+
+
 
 ### Exercise 7
 
