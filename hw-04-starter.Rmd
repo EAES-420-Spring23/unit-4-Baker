@@ -157,17 +157,14 @@ earthquakes_new %>%
   geom_point()
 ```
 
-This scatter plot only shows earthquakes that occurred in 1933  because that was the only year that was selected. 
+This scatter plot only shows earthquakes that occurred in 1933  because that was the only year that was selected. Also, the dates are slightly out of order. 
 
 ### Exercise 9
 
-```{r earthquakes-dates2, eval = F}
+```{r earthquakes-dates2, eval = T}
 earthquakes %>% 
-  mutate(date = ___(glue("{year} {month} {day}"))) %>% 
+  mutate(date = ymd(glue("{year} {month} {day}"))) %>% 
   relocate(date) %>% 
   ggplot(aes(x = date, y = richter)) +
   geom_point() 
 ```
-
-
-
