@@ -11,6 +11,7 @@ output: html_document
 library(tidyverse)
 library(openintro) 
 library(lubridate)
+library(glue)
 ```
 
 ## Exercises
@@ -133,16 +134,40 @@ earthquakes %>%
   labs(x = "Month of the year", y = "Earthquake count")
 ```
 
-The fct_recode() function enables you to rename the factors or names; "months" are now numerical values, but is even more confusing because they do not necessarily correlate with the months; April is listed as 1. 
+The fct_recode() function enables you to rename the factors or names; "months" are now numerical values, but is even more confusing because they do not necessarily correlate with the months; April is listed as "1." 
 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
+```{r earthquake-dates}
+earthquakes_new <- earthquakes %>% 
+  mutate(date = glue("{year} {month} {day}")) %>% 
+  relocate(date)
+print(earthquakes_new)
+```
+
+mutate() allows you to keep existing variables and add new ones; "date" combines year, month, and day, and creates a new variable. relocate() allows you to change the column positions in a data set; "date" is before year.
+date is a `r typeof(date)` data type and is a `r class(date)` vector. 
 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
+```{r earthquakes-new}
+earthquakes_new %>%
+  filter(year == 1933) %>%
+  ggplot(aes(x = date, y = richter)) +
+  geom_point()
+```
+
+This scatter plot only shows earthquakes that occurred in 1933  because that was the only year that was selected. 
 
 ### Exercise 9
 
-Remove this text, and add your answer for Exercise 9 here.
+```{r earthquakes-dates2, eval = F}
+earthquakes %>% 
+  mutate(date = ___(glue("{year} {month} {day}"))) %>% 
+  relocate(date) %>% 
+  ggplot(aes(x = date, y = richter)) +
+  geom_point() 
+```
+
+
+
