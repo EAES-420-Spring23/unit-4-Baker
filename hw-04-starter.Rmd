@@ -73,7 +73,7 @@ typeof(month)
 ```
 
 1) month is characterized as a closure (function) data type instead of a character data type.
-2) The months are out of order because r is placing the months in random order.
+2) The months are out of order because r is placing the months in alphabetical order.
 
 ### Exercise 6
 
@@ -84,12 +84,16 @@ earthquakes %>%
   labs(x = "Month of the year", y = "Earthquake count")
 ```
 
+The fct_infreq() function is reordering the the months in descending order of the amount of earthquakes occurring within each month. The months are still out of order, but at least the data is more understandable.  
+
 ```{r earthquakes-forcats-2}
 earthquakes %>% 
   ggplot(aes(x = fct_rev(month))) +
   geom_bar() +
   labs(x = "Month of the year", y = "Earthquake count")
 ```
+
+The fct_rev() function is reversing the order of the months from the first graph which listed the months in alphabetical order.  
 
 ```{r earthquakes-forcats-3}
 earthquakes %>% 
@@ -98,12 +102,16 @@ earthquakes %>%
   labs(x = "Month of the year", y = "Earthquake count")
 ```
 
+The fct_inorder() function orders the months in the order of when the data was collected; April is the first month when the data was collected.  
+
 ```{r earthquakes-forcats-4}
 earthquakes %>% 
   ggplot(aes(x = month %>% fct_infreq() %>% fct_rev())) +
   geom_bar() +
   labs(x = "Month of the year", y = "Earthquake count")
 ```
+
+By combing the fct_infreq() and fct_rev() functions, it orders the months by the frequency of earthquakes and reverses the order from least to greatest.  
 
 ```{r earthquakes-forcats-5}
 earthquakes %>% 
@@ -125,7 +133,7 @@ earthquakes %>%
   labs(x = "Month of the year", y = "Earthquake count")
 ```
 
-
+The fct_recode() function enables you to rename the factors or names; "months" are now numerical values, but is even more confusing because they do not necessarily correlate with the months; April is listed as 1. 
 
 ### Exercise 7
 
@@ -138,7 +146,3 @@ Remove this text, and add your answer for Exercise 8 here.
 ### Exercise 9
 
 Remove this text, and add your answer for Exercise 9 here.
-
-### Exercise 10
-
-Remove this text, and add your answer for Exercise 10 here.
