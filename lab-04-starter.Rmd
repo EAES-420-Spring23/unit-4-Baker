@@ -159,3 +159,5 @@ earthquakes %>%
 ```
 
 There were 29 major earthquakes in this dataset. 
+
+GOOD JOB
