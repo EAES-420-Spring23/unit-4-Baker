@@ -168,3 +168,4 @@ earthquakes %>%
   ggplot(aes(x = date, y = richter)) +
   geom_point() 
 ```
+GJ
